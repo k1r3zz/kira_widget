@@ -49,7 +49,7 @@ class KContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        background != null ? Positioned.fill(child: background) : Container(),
+        Positioned.fill(child: background !=null? background : Container()),
         Container(
           margin: EdgeInsets.only(
               left: leftMargin == 0 ? margin : leftMargin,
