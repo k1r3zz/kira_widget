@@ -3,6 +3,11 @@ import 'package:flutter_kira/util/mColors.dart';
 
 class KContainer extends StatelessWidget {
   KContainer({
+    this.margin = 0,
+    this.rightMargin = 0,
+    this.topMargin = 0,
+    this.buttomMargin = 0,
+    this.leftMargin = 0,
     this.padding = 0,
     this.leftpadding = 0,
     this.buttompadding = 0,
@@ -20,6 +25,11 @@ class KContainer extends StatelessWidget {
     Key key,
   }) : super(key: key);
 
+  final double margin;
+  final double rightMargin;
+  final double topMargin;
+  final double buttomMargin;
+  final double leftMargin;
   final double padding;
   final double rightPadding;
   final double topPadding;
@@ -41,6 +51,11 @@ class KContainer extends StatelessWidget {
       children: [
         background != null ? Positioned.fill(child: background) : Container(),
         Container(
+          margin: EdgeInsets.only(
+              left: leftMargin == 0 ? margin : leftMargin,
+              top: topMargin == 0 ? margin : topMargin,
+              right: rightMargin == 0 ? margin : rightMargin,
+              bottom: buttomMargin == 0 ? margin : buttomMargin),
           padding: EdgeInsets.only(
               left: leftpadding == 0 ? padding : leftpadding,
               top: topPadding == 0 ? padding : topPadding,
