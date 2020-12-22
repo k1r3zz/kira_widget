@@ -14,9 +14,8 @@ class KContainer extends StatelessWidget {
     this.decoration,
     this.border,
     this.child,
-    this.backgroundAsset,
-    this.backgroundNet,
-    this.color = const Color(0xffffffff),
+    this.background,
+    this.color = const Color(0x00ffffff),
     this.alignment = Alignment.center,
     Key key,
   }) : super(key: key);
@@ -31,8 +30,7 @@ class KContainer extends StatelessWidget {
   final double height;
   final Alignment alignment;
   final Widget child;
-  final String backgroundAsset;
-  final String backgroundNet;
+  final Widget background;
   final double radius;
   final BoxBorder border;
   Decoration decoration;
@@ -41,21 +39,7 @@ class KContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        backgroundAsset != null || backgroundNet != null
-            ? Positioned.fill(
-                child: backgroundAsset != null
-                    ? Image.asset(
-                        backgroundAsset,
-                        fit: BoxFit.fill,
-                      )
-                    : backgroundNet != null
-                        ? Image.network(
-                            backgroundNet,
-                            fit: BoxFit.fill,
-                          )
-                        : Container(),
-              )
-            : Container(),
+        background != null ? Positioned.fill(child: background) : Container(),
         Container(
           padding: EdgeInsets.only(
               left: leftpadding == 0 ? padding : leftpadding,
