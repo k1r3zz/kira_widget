@@ -13,6 +13,7 @@ class KText extends StatelessWidget {
         this.fontlist,
         this.minsize,
         this.maxline,
+        this.textOverflow=TextOverflow.clip,
       }) : super(key: key);
 
   final String title;
@@ -25,6 +26,7 @@ class KText extends StatelessWidget {
   final double minsize;
   List<double> fontlist;
   final int maxline;
+  final TextOverflow textOverflow;
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +37,7 @@ class KText extends StatelessWidget {
           fontSize: size,
           fontWeight: fontWeight,
         ),
+        overflow: textOverflow,
         maxLines: maxline,
         maxFontSize: maxsize == 0 ? size : maxsize,
         minFontSize: minsize == 0 ? size : minsize,
