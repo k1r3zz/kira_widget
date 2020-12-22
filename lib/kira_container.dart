@@ -9,8 +9,8 @@ class KContainer extends StatelessWidget {
     this.buttomMargin = 0,
     this.leftMargin = 0,
     this.padding = 0,
-    this.leftpadding = 0,
-    this.buttompadding = 0,
+    this.leftPadding = 0,
+    this.buttomPadding = 0,
     this.rightPadding = 0,
     this.topPadding = 0,
     this.height = double.infinity,
@@ -33,8 +33,8 @@ class KContainer extends StatelessWidget {
   final double padding;
   final double rightPadding;
   final double topPadding;
-  final double buttompadding;
-  final double leftpadding;
+  final double buttomPadding;
+  final double leftPadding;
   final Color color;
   final double width;
   final double height;
@@ -57,10 +57,10 @@ class KContainer extends StatelessWidget {
               right: rightMargin == 0 ? margin : rightMargin,
               bottom: buttomMargin == 0 ? margin : buttomMargin),
           padding: EdgeInsets.only(
-              left: leftpadding == 0 ? padding : leftpadding,
+              left: leftPadding == 0 ? padding : leftPadding,
               top: topPadding == 0 ? padding : topPadding,
               right: rightPadding == 0 ? padding : rightPadding,
-              bottom: buttompadding == 0 ? padding : buttompadding),
+              bottom: buttomPadding == 0 ? padding : buttomPadding),
           width: width,
           height: height,
           alignment: alignment,
