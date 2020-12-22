@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 class mColors {
@@ -109,9 +108,9 @@ class mColors {
   static Color c_4C5A7BFF = Color(0x4C5A7BFF);
 
 
-  static Gradient getGradient() {
-    return LinearGradient(
-      colors: [mColors.c_20243A, mColors.c_5D6894],
-    );
-  }
+  // static Gradient getGradient() {
+  //   return LinearGradient(
+  //     colors: [mColors.c_20243A, mColors.c_5D6894],
+  //   );
+  // }
 }
