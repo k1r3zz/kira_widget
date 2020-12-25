@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-class CardWidget extends StatefulWidget {
+class KCardWidget extends StatefulWidget {
   final String leftIcon;
   final String rightIcon; 
   final String title;
@@ -8,7 +8,7 @@ class CardWidget extends StatefulWidget {
   final Color titleColor;
   final Color bgColor;
   final bool initiallyExpanded;   // 展开收起状态：默认收起
-  CardWidget({
+  KCardWidget({
     this.leftIcon, 
     this.rightIcon = "assets/images/arrow_left.png", 
     this.title, 
@@ -19,10 +19,10 @@ class CardWidget extends StatefulWidget {
     this.bgColor,
     });
   @override
-  _CardWidgetState createState() => _CardWidgetState();
+  _KCardWidgetState createState() => _KCardWidgetState();
 }
 
-class _CardWidgetState extends State<CardWidget> with TickerProviderStateMixin{
+class _KCardWidgetState extends State<KCardWidget> with TickerProviderStateMixin{
   Animation animation;
   AnimationController animationController;
   bool isExpand = true;
