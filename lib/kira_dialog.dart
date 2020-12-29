@@ -7,7 +7,7 @@ import 'kira_container.dart';
 
 class KDialog {
   static void showDialog(
-      BuildContext context, String content, String out, Function click) {
+      BuildContext context, String content, String confirm, Function click,{String cancel="取消", Function cancelClick}) {
     showElasticDialog(
         context: context,
         barrierDismissible: true,
@@ -33,7 +33,9 @@ class KDialog {
                         children: <Widget>[
                           Expanded(
                             flex: 1,
-                            child: Container(
+                            child: KContainer(
+                              leftPadding: 20,
+                              rightPadding: 20,
                               child: Center(
                                 child: KText(
                                   content,
@@ -55,12 +57,13 @@ class KDialog {
                                   flex: 1,
                                   child: GestureDetector(
                                     onTap: () {
+                                      cancelClick??cancelClick();
                                       Navigator.pop(context);
                                     },
                                     child: Container(
                                       color: mColors.c_000000000,
                                       alignment: Alignment.center,
-                                      child: KText("取消",
+                                      child: KText(cancel,
                                           color: mColors.c_999999, size: 18),
                                     ),
                                   ),
@@ -79,8 +82,8 @@ class KDialog {
                                     child: Container(
                                       color: mColors.c_000000000,
                                       alignment: Alignment.center,
-                                      child: KText(out,
-                                          color: mColors.c_F54B64, size: 18),
+                                      child: KText(confirm,
+                                          color: mColors.c_999999, size: 18),
                                     ),
                                   ),
                                 ),
