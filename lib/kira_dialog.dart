@@ -7,7 +7,8 @@ import 'kira_container.dart';
 
 class KDialog {
   static void showDialog(
-      BuildContext context, String content, String confirm, Function click,{String cancel="取消", Function cancelClick}) {
+      BuildContext context, String content, String confirm, Function click,
+      {String cancel = "取消", Function cancelClick}) {
     showElasticDialog(
         context: context,
         barrierDismissible: true,
@@ -57,7 +58,9 @@ class KDialog {
                                   flex: 1,
                                   child: GestureDetector(
                                     onTap: () {
-                                      cancelClick??cancelClick();
+                                      if (cancelClick != null) {
+                                        cancelClick();
+                                      }
                                       Navigator.pop(context);
                                     },
                                     child: Container(
