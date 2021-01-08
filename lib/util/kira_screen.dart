@@ -14,4 +14,7 @@ class KScreen {
 
   ///导航栏高度
   static double appBarHeight = kMinInteractiveDimension;
+
+  ///导航栏高度
+  static double realHeight = screenHeight-statusHeight-appBarHeight;
 }
