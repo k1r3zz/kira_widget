@@ -41,7 +41,7 @@ class KContainer extends StatelessWidget {
   final double height;
   final Alignment alignment;
   final Widget child;
-  final Widget background;
+  final ImageProvider background;
   final double radius;
   final BoxBorder border;
   Decoration decoration;
@@ -49,17 +49,23 @@ class KContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Positioned.fill(child: background != null ? background : Container()),
-        onClick != null
-            ? GestureDetector(
-                onTap: onClick,
-                child: buildContainer(),
-              )
-            : buildContainer(),
-      ],
-    );
+    return onClick != null
+        ? GestureDetector(
+            onTap: onClick,
+            child: buildContainer(),
+          )
+        : buildContainer();
+    //   Stack(
+    //   children: [
+    //     Positioned.fill(child: background != null ? background : Container()),
+    //     onClick != null
+    //         ? GestureDetector(
+    //             onTap: onClick,
+    //             child: buildContainer(),
+    //           )
+    //         : buildContainer(),
+    //   ],
+    // );
   }
 
   ///Container主体
@@ -82,6 +88,7 @@ class KContainer extends StatelessWidget {
           ? BoxDecoration(
               borderRadius: BorderRadius.circular(radius),
               color: color,
+              image: DecorationImage(image: background, fit: BoxFit.fill),
               border: border)
           : decoration,
       child: child,
