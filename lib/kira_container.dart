@@ -88,7 +88,9 @@ class KContainer extends StatelessWidget {
           ? BoxDecoration(
               borderRadius: BorderRadius.circular(radius),
               color: color,
-              image: DecorationImage(image: background, fit: BoxFit.fill),
+              image: background != null
+                  ? DecorationImage(image: background, fit: BoxFit.fill)
+                  : null,
               border: border)
           : decoration,
       child: child,
