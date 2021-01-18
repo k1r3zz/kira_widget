@@ -58,10 +58,11 @@ class KDialog {
                                   flex: 1,
                                   child: GestureDetector(
                                     onTap: () {
+                                      Navigator.pop(context);
                                       if (cancelClick != null) {
                                         cancelClick();
                                       }
-                                      Navigator.pop(context);
+
                                     },
                                     child: Container(
                                       color: mColors.c_000000000,
@@ -79,8 +80,8 @@ class KDialog {
                                   flex: 1,
                                   child: GestureDetector(
                                     onTap: () {
-                                      click();
                                       Navigator.pop(context);
+                                      click();
                                     },
                                     child: Container(
                                       color: mColors.c_000000000,
