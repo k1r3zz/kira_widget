@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_kira/kira_bool_widget.dart';
 import 'package:flutter_kira/util/mColors.dart';
 
 class KContainer extends StatelessWidget {
@@ -49,23 +50,14 @@ class KContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return onClick != null
-        ? GestureDetector(
-            onTap: onClick,
-            child: buildContainer(),
-          )
-        : buildContainer();
-    //   Stack(
-    //   children: [
-    //     Positioned.fill(child: background != null ? background : Container()),
-    //     onClick != null
-    //         ? GestureDetector(
-    //             onTap: onClick,
-    //             child: buildContainer(),
-    //           )
-    //         : buildContainer(),
-    //   ],
-    // );
+    return KBoolWeight(
+      kBool: onClick != null,
+      firstChild: GestureDetector(
+        onTap: onClick,
+        child: buildContainer(),
+      ),
+      secondChild: buildContainer(),
+    );
   }
 
   ///Container主体
