@@ -16,6 +16,6 @@ class KBoolWeight extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return kBool ? firstChild : kBool ?? Container();
+    return kBool ? firstChild : secondChild ?? Container();
   }
 }
