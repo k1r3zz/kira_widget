@@ -49,10 +49,9 @@ class KTextController {
     }
   }
 
-  addCompleted(Function completed){
-    onCompleted=completed;
+  addCompleted(Function completed) {
+    onCompleted = completed;
   }
-
 }
 
 class _KAutoTextState extends State<KAutoText>
@@ -67,8 +66,9 @@ class _KAutoTextState extends State<KAutoText>
     _animationController =
         AnimationController(vsync: this, duration: widget.duration)
           ..addListener(() {
+            double temp = animation.value;
             setState(() {
-              str = widget.title.substring(0, animation.value);
+              str = widget.title.substring(0, temp.floor());
             });
           })
           ..addStatusListener((status) {
