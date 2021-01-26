@@ -10,11 +10,13 @@ class kCContainer extends StatefulWidget {
       this.offset = Offset.zero,
       this.child,
       this.color = const Color(0x80333333),
-      this.pointController})
+      this.pointController,
+      Key key})
       : assert(width != null),
         assert(height != null),
         assert(pointController != null),
-        assert(child != null);
+        assert(child != null),
+        super(key: key);
 
   final double width;
   final double height;
