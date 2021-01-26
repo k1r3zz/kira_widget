@@ -48,6 +48,11 @@ class KTextController {
       animationController.forward();
     }
   }
+
+  addCompleted(Function completed){
+    onCompleted=completed;
+  }
+
 }
 
 class _KAutoTextState extends State<KAutoText>
