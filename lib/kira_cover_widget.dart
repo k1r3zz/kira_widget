@@ -146,7 +146,7 @@ class _KCoverWidgetState extends State<KCoverWidget> {
         widget.child,
         KContainer(
           height: 40,
-          color: mColors.c_516DB3,
+          color: mColors.c_F29800,
           alignment: Alignment.center,
           child: KWidgetRun(
             child: Image.asset(
