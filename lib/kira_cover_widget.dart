@@ -120,7 +120,7 @@ class _KCoverWidgetState extends State<KCoverWidget> {
                             ),
                             KWidgetRun(
                               child: Image.asset(
-                                R.assetsImagesIconCoverDown,
+                                "assets/images/icon_cover_down.png",
                                 width: 22,
                                 height: 22,
                               ),
@@ -149,7 +149,7 @@ class _KCoverWidgetState extends State<KCoverWidget> {
           alignment: Alignment.center,
           child: KWidgetRun(
             child: Image.asset(
-              R.assetsImagesIconCoverUp,
+              'assets/images/icon_cover_up.png',
               width: 22,
               height: 22,
             ),
