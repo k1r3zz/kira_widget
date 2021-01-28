@@ -68,6 +68,9 @@ class mColors {
   static Color c_0F111A = Color(0xFF0F111A);
   static Color c_4C4F61 = Color(0xFF4C4F61);
   static Color c_5868d9 = Color(0xFF5868d9);
+  static Color c_80333333 = Color(0x80333333);
+
+
 
   /**
    * 00%=FF（不透明）
