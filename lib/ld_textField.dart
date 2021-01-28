@@ -28,6 +28,7 @@ class KTextField extends StatelessWidget {
     this.disabledBorderColor,
     this.keyboardAppearance = Brightness.light,
     this.filled = true,
+    this.fillColor = const Color(0xffFFFFFF),
     this.contentPadding,
     this.contentPaddL,
     this.contentPaddR,
@@ -68,6 +69,8 @@ class KTextField extends StatelessWidget {
   InputBorder disabledInputBorderWidget;
   InputBorder focusedInputBorderWidget;
   TextInputType keyboardType;
+  Color fillColor; 
+  
   Color enabledBorder;
   Color disabledBorderColor;
   Brightness keyboardAppearance; /// 键盘主体颜色
@@ -80,6 +83,7 @@ class KTextField extends StatelessWidget {
       controller: editingController,
       focusNode: focusNode,
       decoration: InputDecoration(
+        fillColor: fillColor,
         contentPadding: contentPadding == null ? EdgeInsets.only(
           left: contentPaddL ?? (contentPaddR ?? 0), 
           right: contentPaddR ?? (contentPaddL ?? 0), 
