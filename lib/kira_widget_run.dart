@@ -63,8 +63,8 @@ class _KWidgetRunState extends State<KWidgetRun>
             }
           });
 
-          print(
-              "===🍌🍌🍌🍌🍌🍌====${_animation.value}----tempY:$tempY---$temp---$tempNum");
+          // print(
+          //     "===🍌🍌🍌🍌🍌🍌====${_animation.value}----tempY:$tempY---$temp---$tempNum");
         }
       })
       ..addStatusListener((status) {
