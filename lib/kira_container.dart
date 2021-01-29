@@ -14,8 +14,8 @@ class KContainer extends StatelessWidget {
     this.buttomPadding = 0,
     this.rightPadding = 0,
     this.topPadding = 0,
-    this.height = double.infinity,
-    this.width = double.infinity,
+    this.height,
+    this.width,
     this.radius = 0,
     this.decoration,
     this.border,
@@ -23,7 +23,7 @@ class KContainer extends StatelessWidget {
     this.background,
     this.onClick,
     this.color = const Color(0x00ffffff),
-    this.alignment = Alignment.center,
+    this.alignment,
     Key key,
   }) : super(key: key);
 

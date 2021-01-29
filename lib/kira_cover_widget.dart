@@ -120,9 +120,10 @@ class _KCoverWidgetState extends State<KCoverWidget> {
                             ),
                             KWidgetRun(
                               child: Image.asset(
-                                "assets/images/icon_cover_down.png",
+                                R.assetsImagesIconCoverDown,
                                 width: 22,
                                 height: 22,
+                                package: "flutter_kira",
                               ),
                             ),
                           ],
@@ -146,13 +147,13 @@ class _KCoverWidgetState extends State<KCoverWidget> {
         widget.child,
         KContainer(
           height: 40,
-          color: mColors.c_516DB3,
           alignment: Alignment.center,
           child: KWidgetRun(
             child: Image.asset(
-              'assets/images/icon_cover_up.png',
+              R.assetsImagesIconCoverUp,
               width: 22,
               height: 22,
+              package: "flutter_kira",
             ),
           ),
         ),
