@@ -23,7 +23,7 @@ class KContainer extends StatelessWidget {
     this.background,
     this.onClick,
     this.color = const Color(0x00ffffff),
-    this.alignment = Alignment.center,
+    this.alignment,
     Key key,
   }) : super(key: key);
 
