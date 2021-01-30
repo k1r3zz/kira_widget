@@ -50,14 +50,33 @@ class _KCoverWidgetState extends State<KCoverWidget> {
         // _overHeight = 100;
       });
       print(
-          "-🐯------${_globalKey.currentContext.size.width}---${_globalKey.currentContext.size.height}-");
+          "-🐯1111------${_globalKey.currentContext.size.width}---${_globalKey.currentContext.size.height}-");
     });
 
     super.initState();
   }
 
   @override
+  void didUpdateWidget(covariant KCoverWidget oldWidget) {
+    // TODO: implement didUpdateWidget
+    print("👀👀👀👀👀👀👀--didUpdateWidget-----$_all");
+
+    _isfirst=true;
+    Future.microtask(() {
+      setState(() {
+        _all = _globalKey.currentContext.size.height;
+        _isfirst = false;
+        // _overHeight = 100;
+      });
+      print(
+          "-🐯22222------${_globalKey.currentContext.size.width}---${_globalKey.currentContext.size.height}-");
+    });
+    super.didUpdateWidget(oldWidget);
+  }
+
+  @override
   Widget build(BuildContext context) {
+    print("👀👀👀👀👀👀👀---build----$_all");
     return Stack(
       children: [
         KBoolWeight(
