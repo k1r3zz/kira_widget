@@ -35,48 +35,40 @@ class _KCoverWidgetState extends State<KCoverWidget> {
   ///控制变化
   bool _cOpacity;
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    _cOpacity = true;
+  ///获取需要weight的真实高度
+  void refreshRealHeight() {
     _isfirst = true;
-    _overHeight = widget.overHeight;
-
-    ///获取需要weight的真实高度
     Future.microtask(() {
       setState(() {
         _all = _globalKey.currentContext.size.height;
         _isfirst = false;
-        // _overHeight = 100;
       });
       print(
           "-🐯1111------${_globalKey.currentContext.size.width}---${_globalKey.currentContext.size.height}-");
     });
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    _cOpacity = true;
+    _overHeight = widget.overHeight;
+
+    refreshRealHeight();
 
     super.initState();
   }
 
+
   @override
   void didUpdateWidget(covariant KCoverWidget oldWidget) {
     // TODO: implement didUpdateWidget
-    print("👀👀👀👀👀👀👀--didUpdateWidget-----$_all");
-
-    _isfirst=true;
-    Future.microtask(() {
-      setState(() {
-        _all = _globalKey.currentContext.size.height;
-        _isfirst = false;
-        // _overHeight = 100;
-      });
-      print(
-          "-🐯22222------${_globalKey.currentContext.size.width}---${_globalKey.currentContext.size.height}-");
-    });
+    refreshRealHeight();
     super.didUpdateWidget(oldWidget);
   }
 
   @override
   Widget build(BuildContext context) {
-    print("👀👀👀👀👀👀👀---build----$_all");
     return Stack(
       children: [
         KBoolWeight(
