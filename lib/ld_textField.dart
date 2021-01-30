@@ -35,10 +35,12 @@ class KTextField extends StatelessWidget {
     this.contentPaddB,
     this.contentPaddT,
     this.focusedBorderColor,
-    this.placeholderColor
+    this.placeholderColor,
+    this.callBack
   }) : super(key: key);
 
   TextEditingController editingController;
+  Function(String) callBack;
   String placeholder;     /// 提示文本
   Widget leftWidget;      /// 左边icon
   Widget rightWidget;     /// 右边icon
@@ -81,6 +83,9 @@ class KTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       controller: editingController,
+      onChanged: (value){
+        callBack(value);
+      },
       focusNode: focusNode,
       decoration: InputDecoration(
         fillColor: fillColor,
