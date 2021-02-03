@@ -14,7 +14,7 @@ extension StringExt on String {
     List<int> numList;
     while ((changeNum >= 0) & (changeNum <= number)) {
       numList.add(changeNum);
-      changeNum--;    
+      changeNum--;
     }
     return numList;
   }
@@ -27,25 +27,28 @@ extension StringExt on String {
     if (number < 1000) {
       formateNum = number.toString();
     } else {
-      double changeNum = number / 100;     // 转换成K以后的数据
-      double newChangeNum = changeNum.roundToDouble() / 10.0;      // 转换后的数据4舍5入
+      double changeNum = number / 100; // 转换成K以后的数据
+      double newChangeNum = changeNum.roundToDouble() / 10.0; // 转换后的数据4舍5入
       formateNum = newChangeNum.toString() + "k";
     }
     return formateNum;
   }
 
   /// 去除小数点后多余的0
-  String toRemoveExtraZero(){
+  String toRemoveExtraZero() {
     // 包含小数点，数据处理
     if (this.contains(".")) {
       List<String> stringList = this.split(".");
-      /// 小数点后面的数值全部为0 
+
+      /// 小数点后面的数值全部为0
       if (double.parse(stringList.last) == 0) {
         return stringList.first;
       } else {
         var pointString = stringList.last;
         for (var i = 0; i < stringList.last.length; i++) {
-          if (pointString.substring(pointString.length - 1, pointString.length) == "0") {
+          if (pointString.substring(
+                  pointString.length - 1, pointString.length) ==
+              "0") {
             pointString = pointString.substring(0, pointString.length - 1);
           }
         }

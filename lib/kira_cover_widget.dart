@@ -59,7 +59,6 @@ class _KCoverWidgetState extends State<KCoverWidget> {
     super.initState();
   }
 
-
   @override
   void didUpdateWidget(covariant KCoverWidget oldWidget) {
     // TODO: implement didUpdateWidget

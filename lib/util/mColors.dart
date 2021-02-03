@@ -70,8 +70,6 @@ class mColors {
   static Color c_5868d9 = Color(0xFF5868d9);
   static Color c_80333333 = Color(0x80333333);
 
-
-
   /**
    * 00%=FF（不透明）
       5%=F2
@@ -109,7 +107,6 @@ class mColors {
   static Color c_7FFF0000 = Color(0x7FFF0000);
   static Color c_19FF0000 = Color(0x19FF0000);
   static Color c_4C5A7BFF = Color(0x4C5A7BFF);
-
 
   // static Gradient getGradient() {
   //   return LinearGradient(

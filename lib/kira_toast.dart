@@ -5,23 +5,22 @@ class KToast {
   static var oldMsg = '';
 
   static show(
-      String msg, {
-        Toast toastLength,
-        int timeInSecForIos = 1,
-        double fontSize = 16.0,
-        ToastGravity gravity: ToastGravity.CENTER,
-        duration = 1,
-      }) {
+    String msg, {
+    Toast toastLength,
+    int timeInSecForIos = 1,
+    double fontSize = 16.0,
+    ToastGravity gravity: ToastGravity.CENTER,
+    duration = 1,
+  }) {
     if (!canShow && oldMsg == msg || !msg.isNotEmpty) return;
     canShow = false;
     oldMsg = msg;
     Fluttertoast.showToast(
-        msg: msg, gravity: ToastGravity.CENTER, timeInSecForIos: duration)
+            msg: msg, gravity: ToastGravity.CENTER, timeInSecForIos: duration)
         .then((e) {
       Future.delayed(Duration(seconds: duration), () {
         canShow = true;
       });
     });
   }
-
 }

@@ -62,7 +62,6 @@ class KDialog {
                                       if (cancelClick != null) {
                                         cancelClick();
                                       }
-
                                     },
                                     child: Container(
                                       color: mColors.c_000000000,

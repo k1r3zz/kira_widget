@@ -3,18 +3,18 @@ import 'package:flutter/material.dart';
 
 class KText extends StatelessWidget {
   KText(
-      this.title, {
-        Key key,
-        this.size = 16,
-        this.align = TextAlign.start,
-        this.color = const Color(0xff000000),
-        this.fontWeight = FontWeight.normal,
-        this.maxsize,
-        this.fontlist,
-        this.minsize,
-        this.maxline,
-        this.textOverflow=TextOverflow.clip,
-      }) : super(key: key);
+    this.title, {
+    Key key,
+    this.size = 16,
+    this.align = TextAlign.start,
+    this.color = const Color(0xff000000),
+    this.fontWeight = FontWeight.normal,
+    this.maxsize,
+    this.fontlist,
+    this.minsize,
+    this.maxline,
+    this.textOverflow = TextOverflow.clip,
+  }) : super(key: key);
 
   final String title;
   final Color color;
@@ -36,6 +36,7 @@ class KText extends StatelessWidget {
           color: color,
           fontSize: size,
           fontWeight: fontWeight,
+          height: 1.1,//适配中文汉字居中
         ),
         overflow: textOverflow,
         maxLines: maxline,
