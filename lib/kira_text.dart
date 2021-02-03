@@ -36,7 +36,7 @@ class KText extends StatelessWidget {
           color: color,
           fontSize: size,
           fontWeight: fontWeight,
-          height: 1.1,//适配中文汉字居中
+          // height: 1.1,//适配中文汉字居中
         ),
         overflow: textOverflow,
         maxLines: maxline,
