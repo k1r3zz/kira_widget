@@ -21,42 +21,43 @@ class KImage extends StatelessWidget {
       this.placeholder,
       this.errorWidget,
       this.placeholderW = 40.0,
-      this.placeholderH = 40.0});
+      this.placeholderH = 40.0,
+      Key key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return KBoolWeight(
       kBool: null == imageUrl || "" == imageUrl,
-      firstChild: Container(
-        color: mColors.c_ffffff,
-      ),
+      firstChild: buildErrorImage(),
       secondChild: CachedNetworkImage(
-        height: height,
-        width: width,
-        useOldImageOnUrlChange: true,
-        fit: boxFit,
-        imageUrl: imageUrl,
-        errorWidget: (context, url, progress) {
-          return Image.asset(
-            errorWidget??R.assetsImagesImageError,
-            fit: boxFit,
-            height: height,
-            width: width,
-            package: "flutter_kira",
-          );
-        },
-        placeholder: placeholder != null
-            ? (context, url) {
-                return Image.asset(
-                  placeholder??R.assetsImagesImageLoading,
-                  fit: boxFit,
-                  height: placeholderH,
-                  width: placeholderW,
-                  package: "flutter_kira",
-                );
-              }
-            : null,
-      ),
+          height: height,
+          width: width,
+          useOldImageOnUrlChange: true,
+          fit: boxFit,
+          imageUrl: imageUrl,
+          errorWidget: (context, url, progress) {
+            return buildErrorImage();
+          },
+          placeholder: (context, url) {
+            return Image.asset(
+              placeholder ?? R.assetsImagesImageLoading,
+              fit: boxFit,
+              height: placeholderH,
+              width: placeholderW,
+              package: "flutter_kira",
+            );
+          }),
+    );
+  }
+
+  Image buildErrorImage() {
+    return Image.asset(
+      errorWidget ?? R.assetsImagesImageError,
+      fit: boxFit,
+      height: height,
+      width: width,
+      package: "flutter_kira",
     );
   }
 }

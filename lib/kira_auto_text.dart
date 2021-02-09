@@ -73,7 +73,9 @@ class _KAutoTextState extends State<KAutoText>
           })
           ..addStatusListener((status) {
             if (status == AnimationStatus.completed) {
-              widget.kTextController.onCompleted();
+              if(null!=widget.kTextController.onCompleted()){
+                widget.kTextController.onCompleted();
+              }
             }
           });
     animation = Tween(begin: 0.0, end: (widget.title).length.toDouble())
