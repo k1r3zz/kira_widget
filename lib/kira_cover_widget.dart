@@ -8,8 +8,10 @@ import 'package:flutter_kira/util/mColors.dart';
 import 'kira_widget_run.dart';
 
 class KCoverWidget extends StatefulWidget {
-  KCoverWidget({this.overHeight, this.child, this.downStr, this.duration})
-      : assert(overHeight != null && overHeight >= 90);
+  KCoverWidget(
+      {Key key, this.overHeight, this.child, this.downStr, this.duration})
+      : assert(overHeight != null && overHeight >= 90),
+        super(key: key);
 
   double overHeight;
   Widget child;

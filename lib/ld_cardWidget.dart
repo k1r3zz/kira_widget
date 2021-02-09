@@ -18,7 +18,8 @@ class KCardWidget extends StatefulWidget {
     this.titleSize = 15,
     this.titleColor,
     this.bgColor,
-  });
+    Key key
+  }): super(key: key);
   @override
   _KCardWidgetState createState() => _KCardWidgetState();
 }

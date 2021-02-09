@@ -11,7 +11,10 @@ class KWidgetRun extends StatefulWidget {
       {this.child,
       this.duration,
       this.curve,
-      this.direction = Direction.vertical});
+      this.direction = Direction.vertical,
+      Key key})
+      : assert(child != null),
+        super(key: key);
 
   Widget child;
   Duration duration;
