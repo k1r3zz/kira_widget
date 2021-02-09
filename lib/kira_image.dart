@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_kira/kira_bool_widget.dart';
+import 'package:flutter_kira/r.dart';
 import 'package:flutter_kira/util/mColors.dart';
 
 class KImage extends StatelessWidget {
@@ -17,8 +18,8 @@ class KImage extends StatelessWidget {
       {this.boxFit,
       this.width,
       this.height,
-      this.placeholder = "assets/images/image_loading_fill.png",
-      this.errorWidget = "assets/images/image_fault.png",
+      this.placeholder,
+      this.errorWidget,
       this.placeholderW = 40.0,
       this.placeholderH = 40.0});
 
@@ -37,7 +38,7 @@ class KImage extends StatelessWidget {
         imageUrl: imageUrl,
         errorWidget: (context, url, progress) {
           return Image.asset(
-            errorWidget,
+            errorWidget??R.assetsImagesImageError,
             fit: boxFit,
             height: height,
             width: width,
@@ -47,7 +48,7 @@ class KImage extends StatelessWidget {
         placeholder: placeholder != null
             ? (context, url) {
                 return Image.asset(
-                  placeholder,
+                  placeholder??R.assetsImagesImageLoading,
                   fit: boxFit,
                   height: placeholderH,
                   width: placeholderW,
