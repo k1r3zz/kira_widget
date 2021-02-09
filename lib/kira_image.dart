@@ -36,13 +36,23 @@ class KImage extends StatelessWidget {
         fit: boxFit,
         imageUrl: imageUrl,
         errorWidget: (context, url, progress) {
-          return Image.asset(errorWidget,
-              fit: boxFit, height: height, width: width);
+          return Image.asset(
+            errorWidget,
+            fit: boxFit,
+            height: height,
+            width: width,
+            package: "flutter_kira",
+          );
         },
         placeholder: placeholder != null
             ? (context, url) {
-                return Image.asset(placeholder,
-                    fit: boxFit, height: placeholderH, width: placeholderW);
+                return Image.asset(
+                  placeholder,
+                  fit: boxFit,
+                  height: placeholderH,
+                  width: placeholderW,
+                  package: "flutter_kira",
+                );
               }
             : null,
       ),
