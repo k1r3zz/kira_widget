@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_kira/kira_bool_widget.dart';
 import 'package:flutter_kira/kira_container.dart';
 import 'package:flutter_kira/kira_text.dart';
+import 'package:flutter_kira/kira_widget_run.dart';
 import 'package:flutter_kira/r.dart';
 import 'package:flutter_kira/util/mColors.dart';
-
-import 'kira_widget_run.dart';
 
 class KCoverWidget extends StatefulWidget {
   KCoverWidget(
@@ -109,16 +108,27 @@ class _KCoverWidgetState extends State<KCoverWidget> {
                       KContainer(
                         height: 50,
                         decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                          colors: [Color(0x00FFFFFF), Color(0xffFFFFFF)],
-                        )),
+                          gradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [Color(0x00FFFFFF), Color(0xffFFFFFF)],
+                          ),
+                          border: Border(
+                            bottom:
+                            BorderSide(color: mColors.c_ffffff, width: 0.0),
+                          ),
+                        ),
                       ),
                       KContainer(
                         height: 40,
-                        color: mColors.c_ffffff,
                         alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          color: mColors.c_ffffff,
+                          border: Border(
+                            bottom:
+                            BorderSide(color: mColors.c_ffffff, width: 0.0),
+                          ),
+                        ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
