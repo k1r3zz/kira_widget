@@ -3,8 +3,8 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_kira/kira_container.dart';
 
-class kCContainer extends StatefulWidget {
-  kCContainer(
+class KCContainer extends StatefulWidget {
+  KCContainer(
       {this.width,
       this.height,
       this.offset = Offset.zero,
@@ -47,7 +47,7 @@ class PointController {
   }
 }
 
-class _kCContainerState extends State<kCContainer>
+class _kCContainerState extends State<KCContainer>
     with SingleTickerProviderStateMixin {
   AnimationController _animationController;
   Animation animation;
