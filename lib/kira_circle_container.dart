@@ -14,7 +14,7 @@ class KCContainer extends StatefulWidget {
       this.decoration,
       this.border,
       this.background,
-      this.radius,
+      this.radius = 0,
       Key key})
       : assert(width != null),
         assert(height != null),
