@@ -22,6 +22,6 @@
 <!--<img src="./screenshots/coverwidget.gif" height="300" />-->
 
 
-| <img src="./screenshots/coverwidget.gif" height="300" /> | <img src="./screenshots/coverwidget.gif" height="300" /> |
-|:------------|:----|
-| coverwidget |  coverwidget   |
+| <img src="./screenshots/coverwidget.gif" width="300" /> | <img src="./screenshots/coverwidget.gif" width="300" /> |
+|:--------------------------------------------------------|:---------------------------------------------------------|
+| coverwidget                                             | coverwidget                                              |
