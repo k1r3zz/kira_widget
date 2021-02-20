@@ -2,6 +2,7 @@
 
 
 
+
 [![Pub](https://img.shields.io/pub/v/flutter_kira.svg)](https://pub.dev/packages/flutter_kira)
 
 ## Getting Started
@@ -17,7 +18,10 @@
 
 <!--![image](https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1428496956,1019754294&fm=26&gp=0.jpg)-->
 <!--![images](./screenshots/coverwidget.gif)-->
-<img src="./screenshots/coverwidget.gif" height="300" />
+<!--<img src="./screenshots/coverwidget.gif" height="300" />-->
+<!--<img src="./screenshots/coverwidget.gif" height="300" />-->
 
 
-
+| <img src="./screenshots/coverwidget.gif" height="300" /> | <img src="./screenshots/coverwidget.gif" height="300" /> |
+|:------------|:----|
+| coverwidget |  coverwidget   |
