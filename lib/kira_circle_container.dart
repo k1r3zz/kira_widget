@@ -11,6 +11,10 @@ class KCContainer extends StatefulWidget {
       this.child,
       this.color = const Color(0x80333333),
       this.pointController,
+      this.decoration,
+      this.border,
+      this.background,
+      this.radius,
       Key key})
       : assert(width != null),
         assert(height != null),
@@ -22,6 +26,10 @@ class KCContainer extends StatefulWidget {
   final double height;
   final Widget child;
   final Offset offset;
+  final ImageProvider background;
+  final double radius;
+  final BoxBorder border;
+  Decoration decoration;
   Color color;
 
   final PointController pointController;
@@ -96,9 +104,18 @@ class _kCContainerState extends State<KCContainer>
       child: ClipPath(
           clipper: CirclePath(animation.value, widget.offset),
           child: KContainer(
-            color: widget.color,
             width: widget.width,
             height: widget.height,
+            decoration: widget.decoration == null
+                ? BoxDecoration(
+                    borderRadius: BorderRadius.circular(widget.radius),
+                    color: widget.color,
+                    image: widget.background != null
+                        ? DecorationImage(
+                            image: widget.background, fit: BoxFit.fill)
+                        : null,
+                    border: widget.border)
+                : widget.decoration,
             child: widget.child,
           )),
     );
