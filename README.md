@@ -1,6 +1,7 @@
 # flutter_kira
 
-A new Flutter package.
+
+[![Pub](https://img.shields.io/pub/v/flutter_kira.svg)](https://pub.dev/packages/flutter_kira)
 
 ## Getting Started
 
