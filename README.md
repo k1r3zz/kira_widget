@@ -20,7 +20,9 @@
 <!--<img src="./screenshots/coverwidget.gif" height="300" />-->
 
 
-| <img src="./screenshots/coverwidget.gif" width="300" />      | <img src="./screenshots/KCoverWidget.gif" width="300" /> |
-|:-------------------------------------------------------------|:--------------------------------------------------------|
-| KCContainer                                                  | KCoverWidget                                             |
+| <img src="./screenshots/coverwidget.gif" width="300" /> | <img src="./screenshots/KCoverWidget.gif" width="300" /> |
+|:--------------------------------------------------------|:---------------------------------------------------------|
+| KCContainer                                             | KCoverWidget                                             |
+| <img src="./screenshots/KFlowButton.gif" width="300" /> | <img src="./screenshots/KWidgetRun.gif" width="300" />   |
+| KFlowButton                                             |KWidgetRun                                                          |
 
