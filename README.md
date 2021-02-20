@@ -1,8 +1,6 @@
 # flutter_kira
 
 
-
-
 [![Pub](https://img.shields.io/pub/v/flutter_kira.svg)](https://pub.dev/packages/flutter_kira)
 
 ## Getting Started
@@ -22,6 +20,7 @@
 <!--<img src="./screenshots/coverwidget.gif" height="300" />-->
 
 
-| <img src="./screenshots/coverwidget.gif" width="300" /> | <img src="./screenshots/coverwidget.gif" width="300" /> |
-|:--------------------------------------------------------|:---------------------------------------------------------|
-| coverwidget                                             | coverwidget                                              |
+| <img src="./screenshots/coverwidget.gif" width="300" />      | <img src="./screenshots/KCoverWidget.gif" width="300" /> |
+|:-------------------------------------------------------------|:--------------------------------------------------------|
+| KCContainer                                                  | KCoverWidget                                             |
+
