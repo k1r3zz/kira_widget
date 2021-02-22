@@ -2,6 +2,10 @@
 
 common widget for project
 
+封装啦一些常用的widget 如：[KContainer](),[KText]()等，讲一些常用的属性封装出来，快速使用，根据使用情况可以与原生的widget搭配使用
+
+还有一些项目中用到的动画效果做啦下封装，会不断更新,如[KCoverWidget](#kcoverwidget), [KCContainer](#kccontainer) 等
+
 [![Pub](https://img.shields.io/pub/v/flutter_kira.svg)](https://pub.dev/packages/flutter_kira)
 
 ## All Widget
