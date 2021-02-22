@@ -9,17 +9,17 @@ class KCardWidget extends StatefulWidget {
   final Color titleColor;
   final Color bgColor;
   final bool initiallyExpanded; // 展开收起状态：默认收起
-  KCardWidget({
-    this.leftIcon,
-    this.rightIcon = "assets/images/arrow_left.png",
-    this.title,
-    this.container,
-    this.initiallyExpanded = false,
-    this.titleSize = 15,
-    this.titleColor,
-    this.bgColor,
-    Key key
-  }): super(key: key);
+  KCardWidget(
+      {this.leftIcon,
+      this.rightIcon = "assets/images/arrow_left.png",
+      this.title,
+      this.container,
+      this.initiallyExpanded = false,
+      this.titleSize = 15,
+      this.titleColor,
+      this.bgColor,
+      Key key})
+      : super(key: key);
   @override
   _KCardWidgetState createState() => _KCardWidgetState();
 }

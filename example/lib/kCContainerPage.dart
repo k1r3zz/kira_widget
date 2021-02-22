@@ -73,7 +73,6 @@ class _KCContainerPageState extends State<KCContainerPage> {
                         offset: Offset(KScreen.screenWidth - 65, 45),
                         child: KContainer(
                           radius: 5,
-
                           color: mColors.c_516DB3,
                           child: Row(
                             children: List.generate(
@@ -109,7 +108,7 @@ class _KCContainerPageState extends State<KCContainerPage> {
             height: KScreen.realHeight,
             width: KScreen.screenWidth,
             pointController: mpointController,
-            offset: Offset(KScreen.screenWidth - 65,KScreen.realHeight-65 ),
+            offset: Offset(KScreen.screenWidth - 65, KScreen.realHeight - 65),
             child: Container(
               color: mColors.c_516DB3,
               child: Image.asset(R.assetsImagesP4),
@@ -123,7 +122,7 @@ class _KCContainerPageState extends State<KCContainerPage> {
           height: 70,
           color: mColors.c_4C4F61,
           alignment: Alignment.center,
-          onClick: (){
+          onClick: () {
             mpointController.openView();
           },
           child: KText(

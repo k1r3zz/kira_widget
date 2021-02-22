@@ -6,6 +6,7 @@ import 'package:flutter_kira/util/mColors.dart';
 import 'kira_container.dart';
 
 class KDialog {
+  ///common dialog
   static void showDialog(
       BuildContext context, String content, String confirm, Function click,
       {String cancel = "取消", Function cancelClick}) {

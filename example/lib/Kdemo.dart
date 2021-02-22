@@ -8,7 +8,6 @@ class Kdemo extends StatefulWidget {
 }
 
 class _KdemoState extends State<Kdemo> {
-
   @override
   void initState() {
     // TODO: implement initState
@@ -36,20 +35,17 @@ class _KdemoState extends State<Kdemo> {
             width: double.infinity,
             height: 50,
             decoration: BoxDecoration(
-              border: Border(
-                  bottom: BorderSide(color:mColors.c_516DB3, width: 0.0)),
-              color: mColors.c_516DB3
-            ),
+                border: Border(
+                    bottom: BorderSide(color: mColors.c_516DB3, width: 0.0)),
+                color: mColors.c_516DB3),
           ),
           Container(
             width: double.infinity,
             height: 200,
             decoration: BoxDecoration(
-              border: Border(
-                  bottom: BorderSide(color: Color(0XFF302F4F), width: 0.0)),
-                color: mColors.c_516DB3
-
-            ),
+                border: Border(
+                    bottom: BorderSide(color: Color(0XFF302F4F), width: 0.0)),
+                color: mColors.c_516DB3),
           )
         ],
       ),

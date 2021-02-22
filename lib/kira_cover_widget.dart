@@ -6,16 +6,24 @@ import 'package:flutter_kira/kira_widget_run.dart';
 import 'package:flutter_kira/r.dart';
 import 'package:flutter_kira/util/mColors.dart';
 
+///cover widget
 class KCoverWidget extends StatefulWidget {
   KCoverWidget(
       {Key key, this.overHeight, this.child, this.downStr, this.duration})
       : assert(overHeight != null && overHeight >= 90),
         super(key: key);
 
-  double overHeight;
-  Widget child;
-  String downStr;
-  Duration duration;
+  ///cover part height overHeight must > 90 because widget
+  final double overHeight;
+
+  ///cover child
+  final Widget child;
+
+  ///cover part text
+  final String downStr;
+
+  ///open cover time
+  final Duration duration;
 
   @override
   _KCoverWidgetState createState() => _KCoverWidgetState();
@@ -24,19 +32,19 @@ class KCoverWidget extends StatefulWidget {
 class _KCoverWidgetState extends State<KCoverWidget> {
   final GlobalKey<_KCoverWidgetState> _globalKey = GlobalKey();
 
-  ///需要展示的高度
+  ///need real height
   double _overHeight;
 
-  ///组件的总高度
+  ///widget all height
   double _all;
 
-  ///是否是第一次加载
+  ///is first init
   bool _isfirst;
 
-  ///控制变化
+  ///change opacity
   bool _cOpacity;
 
-  ///获取需要weight的真实高度
+  ///get real height
   void refreshRealHeight() {
     _isfirst = true;
     Future.microtask(() {
@@ -115,7 +123,7 @@ class _KCoverWidgetState extends State<KCoverWidget> {
                           ),
                           border: Border(
                             bottom:
-                            BorderSide(color: mColors.c_ffffff, width: 0.0),
+                                BorderSide(color: mColors.c_ffffff, width: 0.0),
                           ),
                         ),
                       ),
@@ -126,7 +134,7 @@ class _KCoverWidgetState extends State<KCoverWidget> {
                           color: mColors.c_ffffff,
                           border: Border(
                             bottom:
-                            BorderSide(color: mColors.c_ffffff, width: 0.0),
+                                BorderSide(color: mColors.c_ffffff, width: 0.0),
                           ),
                         ),
                         child: Column(

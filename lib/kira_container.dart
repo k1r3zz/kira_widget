@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kira/kira_bool_widget.dart';
-import 'package:flutter_kira/util/mColors.dart';
 
+///quick use Container
 class KContainer extends StatelessWidget {
   KContainer({
     this.margin = 0,
@@ -27,29 +27,71 @@ class KContainer extends StatelessWidget {
     Key key,
   }) : super(key: key);
 
+  ///margin all use double
   final double margin;
+
+  ///margin right use double if you not assignment use [margin] value
   final double rightMargin;
+
+  ///margin top use double if you not assignment use [margin] value
   final double topMargin;
+
+  ///margin buttom use double if you not assignment use [margin] value
   final double buttomMargin;
+
+  ///margin left use double if you not assignment use [margin] value
   final double leftMargin;
+
+  ///padding all use double
   final double padding;
+
+  ///padding right use double if you not assignment use [margin] value
   final double rightPadding;
+
+  ///padding top use double if you not assignment use [margin] value
   final double topPadding;
+
+  ///padding buttom use double if you not assignment use [margin] value
   final double buttomPadding;
+
+  ///padding left use double if you not assignment use [margin] value
   final double leftPadding;
+
+  ///same as Container Color but if use [decoration] this attribute can not take effect
   final Color color;
+
+  ///same as Container width
   final double width;
+
+  ///same as Container height
   final double height;
+
+  ///same as Container alignment
   final Alignment alignment;
+
+  ///same as Container child
   final Widget child;
+
+  ///set background for Container
   final ImageProvider background;
+
+  ///set all rounded corners use double
+  ///if you want set one rounded corner you can set  [decoration]
   final double radius;
+
+  ///set BoxBorder to BoxDecoration the same as Container
   final BoxBorder border;
-  Decoration decoration;
+
+  ///set Decoration  the same as Container
+  final Decoration decoration;
+
+  ///if you set onClick Container use GestureDetector
   final Function onClick;
 
   @override
   Widget build(BuildContext context) {
+    ///judge need not to need set GestureDetector for Container
+    ///use KBoolWeight judge details for Widget KBoolWeight
     return KBoolWeight(
       kBool: onClick != null,
       firstChild: GestureDetector(
@@ -60,7 +102,7 @@ class KContainer extends StatelessWidget {
     );
   }
 
-  ///Container主体
+  ///use Container
   Container buildContainer() {
     return Container(
       margin: EdgeInsets.only(

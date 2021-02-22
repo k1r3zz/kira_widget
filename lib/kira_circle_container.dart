@@ -22,15 +22,32 @@ class KCContainer extends StatefulWidget {
         assert(child != null),
         super(key: key);
 
+  ///widegt width
   final double width;
+
+  ///widegt width
   final double height;
+
+  ///widegt child can not null
   final Widget child;
+
+  ///widegt start location
   final Offset offset;
+
+  ///cover part background
   final ImageProvider background;
+
+  ///cover part radius
   final double radius;
+
+  ///cover part border
   final BoxBorder border;
-  Decoration decoration;
-  Color color;
+
+  ///cover part decoration
+  final Decoration decoration;
+
+  ///cover part color
+  final Color color;
 
   final PointController pointController;
 
@@ -55,6 +72,7 @@ class PointController {
   }
 }
 
+// ignore: camel_case_types
 class _kCContainerState extends State<KCContainer>
     with SingleTickerProviderStateMixin {
   AnimationController _animationController;

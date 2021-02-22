@@ -6,6 +6,7 @@ enum Direction {
   vertical,
 }
 
+///the Widegt can make Widegt run [Direction.horizontal] or [Direction.vertical]
 class KWidgetRun extends StatefulWidget {
   KWidgetRun(
       {this.child,
@@ -16,10 +17,17 @@ class KWidgetRun extends StatefulWidget {
       : assert(child != null),
         super(key: key);
 
-  Widget child;
-  Duration duration;
-  Curve curve;
-  Direction direction;
+  ///same as Widget child but can not null
+  final Widget child;
+
+  ///set duration with the AnimationController
+  final Duration duration;
+
+  ///set curve with the AnimationController
+  final Curve curve;
+
+  ///set direction with the KWidgetRun [Direction.horizontal] or [Direction.vertical]
+  final Direction direction;
 
   @override
   _KWidgetRunState createState() => _KWidgetRunState();
@@ -45,8 +53,6 @@ class _KWidgetRunState extends State<KWidgetRun>
         vsync: this, duration: widget.duration ?? Duration(milliseconds: 1000))
       ..addListener(() {
         double temp = _animation.value.toStringAsFixed(1).toString().toDouble();
-        // print(
-        //     "===🍎🍎🍎🍎🍎🍎-====${_animation.value}----$tempY---$temp---$tempNum");
         if (tempNum != temp) {
           tempNum = temp;
 
@@ -65,9 +71,6 @@ class _KWidgetRunState extends State<KWidgetRun>
               }
             }
           });
-
-          // print(
-          //     "===🍌🍌🍌🍌🍌🍌====${_animation.value}----tempY:$tempY---$temp---$tempNum");
         }
       })
       ..addStatusListener((status) {

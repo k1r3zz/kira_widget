@@ -4,22 +4,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_kira/kira_container.dart';
 
 enum FlowType {
+  ///A quarter circle show child widget
   circle,
+
+  ///horizontal show child widget
   horizontal,
+
+  ///vertical show child widget
   vertical,
 }
 
+///Widget Button show child widgets for three type
 class KFlowButton extends StatefulWidget {
-  final Widget child;
-  final List<Widget> widgets;
-  final double width;
-  final double height;
-  final Duration duration;
-  final FlowType flowType;
-
-  @override
-  _kflowbuttonState createState() => _kflowbuttonState();
-
   KFlowButton(
       {Key key,
       this.widgets,
@@ -33,8 +29,32 @@ class KFlowButton extends StatefulWidget {
         assert(width != null),
         assert(height != null),
         super(key: key);
+
+  ///button widget
+  final Widget child;
+
+  ///open button show all child widgets
+  final List<Widget> widgets;
+
+  ///this widget width
+  ///advice width > [widgets]+[child] width
+  final double width;
+
+  ///this widget height
+  ///advice height > [widgets]+[child] height
+  final double height;
+
+  ///the duration for open child widgets
+  final Duration duration;
+
+  ///the type of KFlowButton [FlowType.circle] or [FlowType.vertical] or [FlowType.horizontal]
+  final FlowType flowType;
+
+  @override
+  _kflowbuttonState createState() => _kflowbuttonState();
 }
 
+// ignore: camel_case_types
 class _kflowbuttonState extends State<KFlowButton>
     with SingleTickerProviderStateMixin {
   AnimationController _animationController;
@@ -44,7 +64,7 @@ class _kflowbuttonState extends State<KFlowButton>
   List _children;
 
   ///o是合上，1是打开
-  int isopen = 0;
+  int isOpen = 0;
 
   @override
   void initState() {
@@ -53,11 +73,11 @@ class _kflowbuttonState extends State<KFlowButton>
     _children = widget.widgets;
     _children.add(GestureDetector(
       onTap: () {
-        if (isopen == 1) {
-          isopen = 0;
+        if (isOpen == 1) {
+          isOpen = 0;
           _animationController.reverse();
         } else {
-          isopen = 1;
+          isOpen = 1;
           _animationController.forward();
         }
       },
@@ -95,6 +115,7 @@ class _kflowbuttonState extends State<KFlowButton>
   }
 }
 
+// ignore: camel_case_types
 class flowDeges extends FlowDelegate {
   double num;
   FlowType flowType;

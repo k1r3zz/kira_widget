@@ -2,18 +2,9 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_kira/kira_bool_widget.dart';
 import 'package:flutter_kira/r.dart';
-import 'package:flutter_kira/util/mColors.dart';
 
+///network image widget use CachedNetworkImage
 class KImage extends StatelessWidget {
-  final String imageUrl;
-  final BoxFit boxFit;
-  final double width;
-  final double height;
-  final String placeholder;
-  final double placeholderW;
-  final double placeholderH;
-  final String errorWidget;
-
   KImage(this.imageUrl,
       {this.boxFit,
       this.width,
@@ -24,6 +15,30 @@ class KImage extends StatelessWidget {
       this.placeholderH = 40.0,
       Key key})
       : super(key: key);
+
+  ///image url
+  final String imageUrl;
+
+  ///image BoxFit same as Image
+  final BoxFit boxFit;
+
+  ///image width
+  final double width;
+
+  ///image height
+  final double height;
+
+  ///image loading pic for asset
+  final String placeholder;
+
+  ///image loading width
+  final double placeholderW;
+
+  ///image loading height
+  final double placeholderH;
+
+  ///image error pic for asset
+  final String errorWidget;
 
   @override
   Widget build(BuildContext context) {
@@ -51,6 +66,7 @@ class KImage extends StatelessWidget {
     );
   }
 
+  ///errorImage
   Image buildErrorImage() {
     return Image.asset(
       errorWidget ?? R.assetsImagesImageError,

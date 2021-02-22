@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
+///quick use Text
 class KText extends StatelessWidget {
   KText(
     this.title, {
@@ -16,16 +17,35 @@ class KText extends StatelessWidget {
     this.textOverflow = TextOverflow.clip,
   }) : super(key: key);
 
+  ///same as Text
+  ///The text to display.
   final String title;
+
+  ///set text color
   final Color color;
+
+  ///set text size
   final double size;
+
+  ///set TextAlign same as Text
   final TextAlign align;
+
+  ///set text fontWeight
   final FontWeight fontWeight;
 
+  ///set text maxsize
   final double maxsize;
+
+  ///set text minsize
   final double minsize;
-  List<double> fontlist;
+
+  ///set text size list big to small
+  final List<double> fontlist;
+
+  ///set text maxline
   final int maxline;
+
+  ///set text textOverflow
   final TextOverflow textOverflow;
 
   @override

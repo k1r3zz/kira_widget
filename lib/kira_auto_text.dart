@@ -1,7 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'kira_extension.dart';
 
+///Automatically play of text
 class KAutoText extends StatefulWidget {
   KAutoText(
     this.title, {
@@ -21,18 +21,40 @@ class KAutoText extends StatefulWidget {
         assert(kTextController != null),
         super(key: key);
 
+  ///the same as KText
   final String title;
+
+  ///the same as KText
   final Color color;
+
+  ///the same as KText
   final double size;
+
+  ///the same as KText
   final TextAlign align;
+
+  ///the same as KText
   final FontWeight fontWeight;
 
+  ///the same as KText
   final double maxsize;
+
+  ///the same as KText
   final double minsize;
-  List<double> fontlist;
+
+  ///the same as KText
+  final List<double> fontlist;
+
+  ///the same as KText
   final int maxline;
+
+  ///the same as KText
   final TextOverflow textOverflow;
+
+  ///controller AutoText time
   final Duration duration;
+
+  ///controller of AutoText
   final KTextController kTextController;
 
   @override
@@ -43,12 +65,14 @@ class KTextController {
   AnimationController animationController;
   Function onCompleted;
 
+  ///start AutoText
   start() {
     if (animationController != null) {
       animationController.forward();
     }
   }
 
+  ///when AutoText completed
   addCompleted(Function completed) {
     onCompleted = completed;
   }
@@ -73,7 +97,7 @@ class _KAutoTextState extends State<KAutoText>
           })
           ..addStatusListener((status) {
             if (status == AnimationStatus.completed) {
-              if(null!=widget.kTextController.onCompleted()){
+              if (null != widget.kTextController.onCompleted()) {
                 widget.kTextController.onCompleted();
               }
             }

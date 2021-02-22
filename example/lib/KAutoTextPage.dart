@@ -5,9 +5,10 @@ import 'package:flutter_kira/kira_text.dart';
 import 'package:flutter_kira/util/mColors.dart';
 
 class KAutoTextPage extends StatelessWidget {
-  KTextController kTextController = KTextController()..addCompleted((){
-    print('---kira🍎🍎---end');
-  });
+  KTextController kTextController = KTextController()
+    ..addCompleted(() {
+      print('---kira🍎🍎---end');
+    });
 
   @override
   Widget build(BuildContext context) {
