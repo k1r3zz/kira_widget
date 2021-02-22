@@ -47,8 +47,41 @@ common widget for project
 
 | <img src="./screenshots/coverwidget.gif" width="300" /> | <img src="./screenshots/KCoverWidget.gif" width="300" /> |
 |:--------------------------------------------------------|:---------------------------------------------------------|
-| [Installation](#installation)                            | KCoverWidget                                             |
+| [KCoverWidget](#kcoverwidget)                           | [KCContainer](#kccontainer)                                             |
 | <img src="./screenshots/KFlowButton.gif" width="300" /> | <img src="./screenshots/KWidgetRun.gif" width="300" />   |
 | KFlowButton                                             | KWidgetRun                                               |
 
-### Installation
+### KCoverWidget
+_Example
+```
+ KCoverWidget(
+              overHeight: 90,
+              downStr: "点击更多详情",
+              child: Column(
+                //mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    "大家好我是KCoverWidget大家好我是KCoverWidget大家好我是KCoverWidget大家好我是KCoverWidget大家好我是KCoverWidget大家好我是KCoverWidget大家好我是KCoverWidget大家好我是KCoverWidget大家好我是KCoverWidget大家好我是KCoverWidget大家好我是KCoverWidget大家好我是KCoverWidget大家好我是KCoverWidget大家好我是KCoverWidget大家好我是KCoverWidget大家好我是KCoverWidget大家好我是KCoverWidget大家好我是KCoverWidget大家好我是KCoverWidget大家好我是KCoverWidget大家好我是KCoverWidget大家好我是KCoverWidget大家好我是KCoverWidget大家好我是KCoverWidget大家好我是KCoverWidget大家好我是KCoverWidget大家好我是KCoverWidget大家好我是KCoverWidget大家好我是KCoverWidget",
+                    // overflow: TextOverflow.visible,
+                  ),
+                  // Container(height: 120,color: mColors.c_333333,),
+                ],
+              ),
+            ),
+```
+
+### KCContainer
+_Example
+```
+ KCContainer(
+            height: KScreen.realHeight,
+            width: KScreen.screenWidth,
+            pointController: mpointController,
+            offset: Offset(KScreen.screenWidth - 65, KScreen.realHeight - 65),
+            child: Container(
+              color: mColors.c_516DB3,
+              child: Image.asset(R.assetsImagesP4),
+            ),
+          )
+      
+```
