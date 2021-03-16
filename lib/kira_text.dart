@@ -60,8 +60,8 @@ class KText extends StatelessWidget {
         ),
         overflow: textOverflow,
         maxLines: maxline,
-        maxFontSize: maxsize == 0 ? size : maxsize??0,
-        minFontSize: minsize == 0 ? size : minsize??0,
+        maxFontSize: maxsize == 0 ? size : maxsize ?? 0,
+        minFontSize: minsize == 0 ? size : minsize ?? 0,
         presetFontSizes: fontlist ?? [size]);
   }
 }

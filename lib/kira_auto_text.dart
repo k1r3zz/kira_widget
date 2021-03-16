@@ -126,8 +126,8 @@ class _KAutoTextState extends State<KAutoText>
         ),
         overflow: widget.textOverflow,
         maxLines: widget.maxline,
-        maxFontSize: widget.maxsize == 0 ? widget.size : widget.maxsize??0,
-        minFontSize: widget.minsize == 0 ? widget.size : widget.minsize??0,
+        maxFontSize: widget.maxsize == 0 ? widget.size : widget.maxsize ?? 0,
+        minFontSize: widget.minsize == 0 ? widget.size : widget.minsize ?? 0,
         presetFontSizes: widget.fontlist ?? [widget.size]);
   }
 }
