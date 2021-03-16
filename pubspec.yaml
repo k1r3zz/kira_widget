@@ -1,6 +1,6 @@
 name: flutter_kira
-description: Flutter 常用widget
-version: 0.1.0
+description: A library that allows Flutter to develop quickly, encapsulating everyday animated widget, and is in the process of updating
+version: 0.1.1
 author: kira<a1215152135@gmail.com>
 homepage: https://github.com/k1r3zz/kira_widget
 
@@ -10,8 +10,8 @@ environment:
 
 dependencies:
   auto_size_text: ^2.1.0
-  cached_network_image: ^2.2.0+1
-  fluttertoast: ^3.1.2
+  cached_network_image: ^2.5.1
+  fluttertoast: ^7.1.8
 
   flutter:
     sdk: flutter
