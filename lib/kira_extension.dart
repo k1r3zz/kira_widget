@@ -8,12 +8,12 @@ extension StringExt on String {
   }
 
   /// 获取小于该数值的所有整数的一个数值数组
-  List<int> toIntList() {
+  List<int>? toIntList() {
     int number = int.parse(this);
     int changeNum = number;
-    List<int> numList;
+    List<int>? numList;
     while ((changeNum >= 0) & (changeNum <= number)) {
-      numList.add(changeNum);
+      numList!.add(changeNum);
       changeNum--;
     }
     return numList;

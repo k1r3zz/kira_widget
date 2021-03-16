@@ -9,7 +9,7 @@ class KDialog {
   ///common dialog
   static void showDialog(
       BuildContext context, String content, String confirm, Function click,
-      {String cancel = "取消", Function cancelClick}) {
+      {String cancel = "取消", Function? cancelClick}) {
     showElasticDialog(
         context: context,
         barrierDismissible: true,

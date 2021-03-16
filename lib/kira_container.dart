@@ -24,7 +24,7 @@ class KContainer extends StatelessWidget {
     this.onClick,
     this.color = const Color(0x00ffffff),
     this.alignment,
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   ///margin all use double
@@ -61,32 +61,32 @@ class KContainer extends StatelessWidget {
   final Color color;
 
   ///same as Container width
-  final double width;
+  final double? width;
 
   ///same as Container height
-  final double height;
+  final double? height;
 
   ///same as Container alignment
-  final Alignment alignment;
+  final Alignment? alignment;
 
   ///same as Container child
-  final Widget child;
+  final Widget? child;
 
   ///set background for Container
-  final ImageProvider background;
+  final ImageProvider? background;
 
   ///set all rounded corners use double
   ///if you want set one rounded corner you can set  [decoration]
   final double radius;
 
   ///set BoxBorder to BoxDecoration the same as Container
-  final BoxBorder border;
+  final BoxBorder? border;
 
   ///set Decoration  the same as Container
-  final Decoration decoration;
+  final Decoration? decoration;
 
   ///if you set onClick Container use GestureDetector
-  final Function onClick;
+  final Function? onClick;
 
   @override
   Widget build(BuildContext context) {
@@ -95,7 +95,7 @@ class KContainer extends StatelessWidget {
     return KBoolWeight(
       kBool: onClick != null,
       firstChild: GestureDetector(
-        onTap: onClick,
+        onTap: onClick as void Function()?,
         child: buildContainer(),
       ),
       secondChild: buildContainer(),
@@ -123,7 +123,7 @@ class KContainer extends StatelessWidget {
               borderRadius: BorderRadius.circular(radius),
               color: color,
               image: background != null
-                  ? DecorationImage(image: background, fit: BoxFit.fill)
+                  ? DecorationImage(image: background!, fit: BoxFit.fill)
                   : null,
               border: border)
           : decoration,

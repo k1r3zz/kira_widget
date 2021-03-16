@@ -9,21 +9,21 @@ import 'package:flutter_kira/util/mColors.dart';
 ///cover widget
 class KCoverWidget extends StatefulWidget {
   KCoverWidget(
-      {Key key, this.overHeight, this.child, this.downStr, this.duration})
+      {Key? key, this.overHeight, this.child, this.downStr, this.duration})
       : assert(overHeight != null && overHeight >= 90),
         super(key: key);
 
   ///cover part height overHeight must > 90 because widget
-  final double overHeight;
+  final double? overHeight;
 
   ///cover child
-  final Widget child;
+  final Widget? child;
 
   ///cover part text
-  final String downStr;
+  final String? downStr;
 
   ///open cover time
-  final Duration duration;
+  final Duration? duration;
 
   @override
   _KCoverWidgetState createState() => _KCoverWidgetState();
@@ -33,27 +33,27 @@ class _KCoverWidgetState extends State<KCoverWidget> {
   final GlobalKey<_KCoverWidgetState> _globalKey = GlobalKey();
 
   ///need real height
-  double _overHeight;
+  double? _overHeight;
 
   ///widget all height
-  double _all;
+  double? _all;
 
   ///is first init
-  bool _isfirst;
+  late bool _isfirst;
 
   ///change opacity
-  bool _cOpacity;
+  late bool _cOpacity;
 
   ///get real height
   void refreshRealHeight() {
     _isfirst = true;
     Future.microtask(() {
       setState(() {
-        _all = _globalKey.currentContext.size.height;
+        _all = _globalKey.currentContext!.size!.height;
         _isfirst = false;
       });
       print(
-          "-🐯1111------${_globalKey.currentContext.size.width}---${_globalKey.currentContext.size.height}-");
+          "-🐯1111------${_globalKey.currentContext!.size!.width}---${_globalKey.currentContext!.size!.height}-");
     });
   }
 
@@ -174,7 +174,7 @@ class _KCoverWidgetState extends State<KCoverWidget> {
   Widget childWeight() {
     return Column(
       children: [
-        widget.child,
+        widget.child!,
         KContainer(
           height: 40,
           alignment: Alignment.center,

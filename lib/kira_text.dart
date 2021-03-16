@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class KText extends StatelessWidget {
   KText(
     this.title, {
-    Key key,
+    Key? key,
     this.size = 16,
     this.align = TextAlign.start,
     this.color = const Color(0xff000000),
@@ -19,7 +19,7 @@ class KText extends StatelessWidget {
 
   ///same as Text
   ///The text to display.
-  final String title;
+  final String? title;
 
   ///set text color
   final Color color;
@@ -34,23 +34,23 @@ class KText extends StatelessWidget {
   final FontWeight fontWeight;
 
   ///set text maxsize
-  final double maxsize;
+  final double? maxsize;
 
   ///set text minsize
-  final double minsize;
+  final double? minsize;
 
   ///set text size list big to small
-  final List<double> fontlist;
+  final List<double>? fontlist;
 
   ///set text maxline
-  final int maxline;
+  final int? maxline;
 
   ///set text textOverflow
   final TextOverflow textOverflow;
 
   @override
   Widget build(BuildContext context) {
-    return AutoSizeText(title,
+    return AutoSizeText(title!,
         textAlign: align,
         style: TextStyle(
           color: color,
@@ -60,8 +60,8 @@ class KText extends StatelessWidget {
         ),
         overflow: textOverflow,
         maxLines: maxline,
-        maxFontSize: maxsize == 0 ? size : maxsize,
-        minFontSize: minsize == 0 ? size : minsize,
+        maxFontSize: maxsize == 0 ? size : maxsize??0,
+        minFontSize: minsize == 0 ? size : minsize??0,
         presetFontSizes: fontlist ?? [size]);
   }
 }

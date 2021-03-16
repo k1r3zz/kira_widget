@@ -5,17 +5,17 @@ import 'package:flutter_kira/kira_container.dart';
 
 class KCContainer extends StatefulWidget {
   KCContainer(
-      {this.width,
-      this.height,
+      {required this.width,
+      required this.height,
       this.offset = Offset.zero,
-      this.child,
+      required this.child,
       this.color = const Color(0x80333333),
-      this.pointController,
+      required this.pointController,
       this.decoration,
       this.border,
       this.background,
       this.radius = 0,
-      Key key})
+      Key? key})
       : assert(width != null),
         assert(height != null),
         assert(pointController != null),
@@ -35,16 +35,16 @@ class KCContainer extends StatefulWidget {
   final Offset offset;
 
   ///cover part background
-  final ImageProvider background;
+  final ImageProvider? background;
 
   ///cover part radius
   final double radius;
 
   ///cover part border
-  final BoxBorder border;
+  final BoxBorder? border;
 
   ///cover part decoration
-  final Decoration decoration;
+  final Decoration? decoration;
 
   ///cover part color
   final Color color;
@@ -56,17 +56,17 @@ class KCContainer extends StatefulWidget {
 }
 
 class PointController {
-  AnimationController animationController;
+  AnimationController? animationController;
   double isOpen = 0;
 
   openView() {
     if (animationController != null) {
       if (isOpen == 0) {
         isOpen = 1;
-        animationController.forward();
+        animationController!.forward();
       } else {
         isOpen = 0;
-        animationController.reverse();
+        animationController!.reverse();
       }
     }
   }
@@ -75,11 +75,11 @@ class PointController {
 // ignore: camel_case_types
 class _kCContainerState extends State<KCContainer>
     with SingleTickerProviderStateMixin {
-  AnimationController _animationController;
-  Animation animation;
+  AnimationController? _animationController;
+  late Animation animation;
 
-  double cWidth;
-  double long;
+  double? cWidth;
+  double? long;
 
   @override
   void initState() {
@@ -94,7 +94,7 @@ class _kCContainerState extends State<KCContainer>
             });
           });
 
-    animation = Tween(begin: 0.0, end: long).animate(_animationController);
+    animation = Tween(begin: 0.0, end: long).animate(_animationController!);
     widget.pointController.animationController = _animationController;
 
     super.initState();
@@ -103,7 +103,7 @@ class _kCContainerState extends State<KCContainer>
   @override
   void dispose() {
     // TODO: implement dispose
-    _animationController.dispose();
+    _animationController!.dispose();
     super.dispose();
   }
 
@@ -113,10 +113,10 @@ class _kCContainerState extends State<KCContainer>
       onTap: () {
         if (widget.pointController.isOpen == 0) {
           widget.pointController.isOpen = 1;
-          _animationController.forward();
+          _animationController!.forward();
         } else {
           widget.pointController.isOpen = 0;
-          _animationController.reverse();
+          _animationController!.reverse();
         }
       },
       child: ClipPath(
@@ -130,7 +130,7 @@ class _kCContainerState extends State<KCContainer>
                     color: widget.color,
                     image: widget.background != null
                         ? DecorationImage(
-                            image: widget.background, fit: BoxFit.fill)
+                            image: widget.background!, fit: BoxFit.fill)
                         : null,
                     border: widget.border)
                 : widget.decoration,

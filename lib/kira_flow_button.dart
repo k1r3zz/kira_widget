@@ -17,11 +17,11 @@ enum FlowType {
 ///Widget Button show child widgets for three type
 class KFlowButton extends StatefulWidget {
   KFlowButton(
-      {Key key,
-      this.widgets,
-      this.width,
-      this.height,
-      this.child,
+      {Key? key,
+      required this.widgets,
+      required this.width,
+      required this.height,
+      required this.child,
       this.duration,
       this.flowType = FlowType.circle})
       : assert(child != null),
@@ -45,7 +45,7 @@ class KFlowButton extends StatefulWidget {
   final double height;
 
   ///the duration for open child widgets
-  final Duration duration;
+  final Duration? duration;
 
   ///the type of KFlowButton [FlowType.circle] or [FlowType.vertical] or [FlowType.horizontal]
   final FlowType flowType;
@@ -57,11 +57,11 @@ class KFlowButton extends StatefulWidget {
 // ignore: camel_case_types
 class _kflowbuttonState extends State<KFlowButton>
     with SingleTickerProviderStateMixin {
-  AnimationController _animationController;
-  Animation _animation;
+  late AnimationController _animationController;
+  late Animation _animation;
 
   ///所有子空间集合
-  List _children;
+  late List _children;
 
   ///o是合上，1是打开
   int isOpen = 0;
@@ -108,7 +108,7 @@ class _kflowbuttonState extends State<KFlowButton>
         animation: _animation,
         builder: (context, child) => Flow(
           delegate: flowDeges(_animation.value, widget.flowType),
-          children: _children,
+          children: _children as List<Widget>,
         ),
       ),
     );
@@ -131,8 +131,8 @@ class flowDeges extends FlowDelegate {
       var perRad = pi / 2 / count;
 
       for (int i = 0; i < count; i++) {
-        var cSizeX = context.getChildSize(i).width / 2;
-        var cSizeY = context.getChildSize(i).height / 2;
+        var cSizeX = context.getChildSize(i)!.width / 2;
+        var cSizeY = context.getChildSize(i)!.height / 2;
 
         var offsetX = -num * (radius - cSizeX) * sin(i * perRad + perRad / 2) +
             context.size.width;
@@ -146,38 +146,38 @@ class flowDeges extends FlowDelegate {
       }
     } else if (flowType == FlowType.vertical) {
       double tempH = (context.size.height -
-              context.getChildSize(context.childCount - 1).height) /
+              context.getChildSize(context.childCount - 1)!.height) /
           count;
       double oldH = context.size.height -
-          context.getChildSize(context.childCount - 1).height;
+          context.getChildSize(context.childCount - 1)!.height;
       for (int i = 0; i < count; i++) {
         context.paintChild(i,
             opacity: num,
             transform: Matrix4.translationValues(
-                context.size.width - context.getChildSize(i).width,
+                context.size.width - context.getChildSize(i)!.width,
                 oldH - tempH * (i + 1) * num,
                 0.0));
       }
     } else if (flowType == FlowType.horizontal) {
       double tempW = (context.size.width -
-              context.getChildSize(context.childCount - 1).width) /
+              context.getChildSize(context.childCount - 1)!.width) /
           count;
       double oldW = context.size.width -
-          context.getChildSize(context.childCount - 1).width;
+          context.getChildSize(context.childCount - 1)!.width;
       for (int i = 0; i < count; i++) {
         context.paintChild(i,
             opacity: num,
             transform: Matrix4.translationValues(oldW - tempW * (i + 1) * num,
-                context.size.height - context.getChildSize(i).height, 0.0));
+                context.size.height - context.getChildSize(i)!.height, 0.0));
       }
     }
 
     context.paintChild(context.childCount - 1,
         transform: Matrix4.translationValues(
             context.size.width -
-                context.getChildSize(context.childCount - 1).width,
+                context.getChildSize(context.childCount - 1)!.width,
             context.size.height -
-                context.getChildSize(context.childCount - 1).height,
+                context.getChildSize(context.childCount - 1)!.height,
             0.0));
   }
 

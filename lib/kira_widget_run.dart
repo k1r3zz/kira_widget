@@ -9,11 +9,11 @@ enum Direction {
 ///the Widegt can make Widegt run [Direction.horizontal] or [Direction.vertical]
 class KWidgetRun extends StatefulWidget {
   KWidgetRun(
-      {this.child,
+      {required this.child,
       this.duration,
       this.curve,
       this.direction = Direction.vertical,
-      Key key})
+      Key? key})
       : assert(child != null),
         super(key: key);
 
@@ -21,10 +21,10 @@ class KWidgetRun extends StatefulWidget {
   final Widget child;
 
   ///set duration with the AnimationController
-  final Duration duration;
+  final Duration? duration;
 
   ///set curve with the AnimationController
-  final Curve curve;
+  final Curve? curve;
 
   ///set direction with the KWidgetRun [Direction.horizontal] or [Direction.vertical]
   final Direction direction;
@@ -35,13 +35,13 @@ class KWidgetRun extends StatefulWidget {
 
 class _KWidgetRunState extends State<KWidgetRun>
     with SingleTickerProviderStateMixin {
-  AnimationController _animationController;
-  Animation _animation;
+  late AnimationController _animationController;
+  late Animation _animation;
 
   double tempNum = 0;
 
-  double tempX;
-  double tempY;
+  late double tempX;
+  late double tempY;
 
   @override
   void initState() {

@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 ///add judge to choose use firstChild or secondChild default Container()
 class KBoolWeight extends StatelessWidget {
   KBoolWeight({
-    this.kBool,
-    this.firstChild,
+    required this.kBool,
+    required this.firstChild,
     this.secondChild,
-    Key key,
+    Key? key,
   })  : assert(kBool != null),
         assert(firstChild != null),
         super(key: key);
@@ -15,7 +15,7 @@ class KBoolWeight extends StatelessWidget {
   final Widget firstChild;
 
   ///if [kBool] false use secondChild default Container()
-  final Widget secondChild;
+  final Widget? secondChild;
 
   ///Judge conditions
   final bool kBool;

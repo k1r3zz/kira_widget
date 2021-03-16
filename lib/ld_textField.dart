@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 // ignore: must_be_immutable
 class KTextField extends StatelessWidget {
   KTextField(
-      {Key key,
+      {Key? key,
       this.leftWidget,
       this.rightWidget,
       this.placeholder,
@@ -39,82 +39,82 @@ class KTextField extends StatelessWidget {
       this.callBack})
       : super(key: key);
 
-  TextEditingController editingController;
-  Function(String) callBack;
-  String placeholder;
+  TextEditingController? editingController;
+  Function(String)? callBack;
+  String? placeholder;
 
   /// 提示文本
-  Widget leftWidget;
+  Widget? leftWidget;
 
   /// 左边icon
-  Widget rightWidget;
+  Widget? rightWidget;
 
   /// 右边icon
   Color titleColor;
 
   /// 文本颜色
-  Color placeholderColor;
+  Color? placeholderColor;
 
   /// 提示文本颜色
   double fontSize;
 
   /// 文字大小
-  FontWeight fontWeight;
+  FontWeight? fontWeight;
 
   /// 文本字体宽度
-  List<TextInputFormatter> inputFormatters;
+  List<TextInputFormatter>? inputFormatters;
 
   /// 输入文本格式化
 
   /// 文本边距，默认左边距等于右边距，上边距等于下边距
-  double contentPadding;
-  double contentPaddT;
-  double contentPaddB;
-  double contentPaddL;
-  double contentPaddR;
+  double? contentPadding;
+  double? contentPaddT;
+  double? contentPaddB;
+  double? contentPaddL;
+  double? contentPaddR;
 
-  FocusNode focusNode;
+  FocusNode? focusNode;
 
   double borderWidth;
 
   /// 边框宽度
   /// 边框圆角，默认无圆角
-  double borderRadius;
+  double? borderRadius;
 
   /// 边框圆角
-  double borderRadiusTL;
+  double? borderRadiusTL;
 
   /// 边框左上圆角
-  double borderRadiusTR;
+  double? borderRadiusTR;
 
   /// 边框右上圆角
-  double borderRadiusBL;
+  double? borderRadiusBL;
 
   /// 边框左下圆角
-  double borderRadiusBR;
+  double? borderRadiusBR;
 
   /// 边框右下圆角
 
-  InputBorder enableInputBorderWidget;
-  InputBorder disabledInputBorderWidget;
-  InputBorder focusedInputBorderWidget;
-  TextInputType keyboardType;
+  InputBorder? enableInputBorderWidget;
+  InputBorder? disabledInputBorderWidget;
+  InputBorder? focusedInputBorderWidget;
+  TextInputType? keyboardType;
   Color fillColor;
 
   Color enabledBorder;
-  Color disabledBorderColor;
+  Color? disabledBorderColor;
   Brightness keyboardAppearance;
 
   /// 键盘主体颜色
   bool filled;
-  Color focusedBorderColor;
+  Color? focusedBorderColor;
 
   @override
   Widget build(BuildContext context) {
     return TextField(
         controller: editingController,
         onChanged: (value) {
-          callBack(value);
+          callBack!(value);
         },
         focusNode: focusNode,
         decoration: InputDecoration(
@@ -126,7 +126,7 @@ class KTextField extends StatelessWidget {
                   top: contentPaddT ?? (contentPaddB ?? 0),
                   bottom: contentPaddB ?? (contentPaddT ?? 0),
                 )
-              : EdgeInsets.all(contentPadding),
+              : EdgeInsets.all(contentPadding!),
           filled: filled,
           hintText: placeholder,
           hintStyle: TextStyle(
@@ -143,13 +143,13 @@ class KTextField extends StatelessWidget {
                 ),
                 borderRadius: borderRadius == null
                     ? BorderRadius.only(
-                        topLeft: borderRadiusTL ?? Radius.zero,
-                        topRight: borderRadiusTR ?? Radius.zero,
-                        bottomLeft: borderRadiusBL ?? Radius.zero,
-                        bottomRight: borderRadiusBR ?? Radius.zero,
+                        topLeft: borderRadiusTL as Radius? ?? Radius.zero,
+                        topRight: borderRadiusTR as Radius? ?? Radius.zero,
+                        bottomLeft: borderRadiusBL as Radius? ?? Radius.zero,
+                        bottomRight: borderRadiusBR as Radius? ?? Radius.zero,
                       )
                     : BorderRadius.all(
-                        Radius.circular(borderRadius ?? Radius.zero)),
+                        Radius.circular(borderRadius ?? Radius.zero as double)),
               ),
           disabledBorder: disabledInputBorderWidget ??
               OutlineInputBorder(
@@ -159,13 +159,13 @@ class KTextField extends StatelessWidget {
                 ),
                 borderRadius: borderRadius == null
                     ? BorderRadius.only(
-                        topLeft: borderRadiusTL ?? Radius.zero,
-                        topRight: borderRadiusTR ?? Radius.zero,
-                        bottomLeft: borderRadiusBL ?? Radius.zero,
-                        bottomRight: borderRadiusBR ?? Radius.zero,
+                        topLeft: borderRadiusTL as Radius? ?? Radius.zero,
+                        topRight: borderRadiusTR as Radius? ?? Radius.zero,
+                        bottomLeft: borderRadiusBL as Radius? ?? Radius.zero,
+                        bottomRight: borderRadiusBR as Radius? ?? Radius.zero,
                       )
                     : BorderRadius.all(
-                        Radius.circular(borderRadius ?? Radius.zero)),
+                        Radius.circular(borderRadius ?? Radius.zero as double)),
               ),
           focusedBorder: focusedInputBorderWidget ??
               OutlineInputBorder(
@@ -175,13 +175,13 @@ class KTextField extends StatelessWidget {
                 ),
                 borderRadius: borderRadius == null
                     ? BorderRadius.only(
-                        topLeft: borderRadiusTL ?? Radius.zero,
-                        topRight: borderRadiusTR ?? Radius.zero,
-                        bottomLeft: borderRadiusBL ?? Radius.zero,
-                        bottomRight: borderRadiusBR ?? Radius.zero,
+                        topLeft: borderRadiusTL as Radius? ?? Radius.zero,
+                        topRight: borderRadiusTR as Radius? ?? Radius.zero,
+                        bottomLeft: borderRadiusBL as Radius? ?? Radius.zero,
+                        bottomRight: borderRadiusBR as Radius? ?? Radius.zero,
                       )
                     : BorderRadius.all(
-                        Radius.circular(borderRadius ?? Radius.zero)),
+                        Radius.circular(borderRadius ?? Radius.zero as double)),
               ),
         ),
         style: TextStyle(

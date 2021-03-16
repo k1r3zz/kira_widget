@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types
 class mColors {
   static Color c_000000000 = Color(0x000000000);
   static Color c_ffffff = Color(0xFFFFFFFF);

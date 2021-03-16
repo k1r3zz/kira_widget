@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-Future<T> showElasticDialog<T>({
-  @required BuildContext context,
+Future<T?> showElasticDialog<T>({
+  required BuildContext context,
   bool barrierDismissible = true,
-  WidgetBuilder builder,
+  WidgetBuilder? builder,
 }) {
-  final ThemeData theme = Theme.of(context, shadowThemeOnly: true);
+  final ThemeData theme = Theme.of(context);
   return showGeneralDialog(
     context: context,
     pageBuilder: (BuildContext buildContext, Animation<double> animation,
         Animation<double> secondaryAnimation) {
-      final Widget pageChild = Builder(builder: builder);
+      final Widget pageChild = Builder(builder: builder!);
       return SafeArea(
         child: Builder(builder: (BuildContext context) {
           return theme != null

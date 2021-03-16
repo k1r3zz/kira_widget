@@ -6,7 +6,7 @@ class KToast {
 
   static show(
     String msg, {
-    Toast toastLength,
+    Toast? toastLength,
     int timeInSecForIos = 1,
     double fontSize = 16.0,
     ToastGravity gravity: ToastGravity.CENTER,
@@ -16,7 +16,7 @@ class KToast {
     canShow = false;
     oldMsg = msg;
     Fluttertoast.showToast(
-            msg: msg, gravity: ToastGravity.CENTER, timeInSecForIos: duration)
+            msg: msg, gravity: ToastGravity.CENTER, timeInSecForIosWeb: duration)
         .then((e) {
       Future.delayed(Duration(seconds: duration), () {
         canShow = true;

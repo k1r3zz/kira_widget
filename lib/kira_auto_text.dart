@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 class KAutoText extends StatefulWidget {
   KAutoText(
     this.title, {
-    Key key,
-    this.duration,
-    this.kTextController,
+    Key? key,
+    required this.duration,
+    required this.kTextController,
     this.size = 16,
     this.align = TextAlign.start,
     this.color = const Color(0xff000000),
@@ -37,16 +37,16 @@ class KAutoText extends StatefulWidget {
   final FontWeight fontWeight;
 
   ///the same as KText
-  final double maxsize;
+  final double? maxsize;
 
   ///the same as KText
-  final double minsize;
+  final double? minsize;
 
   ///the same as KText
-  final List<double> fontlist;
+  final List<double>? fontlist;
 
   ///the same as KText
-  final int maxline;
+  final int? maxline;
 
   ///the same as KText
   final TextOverflow textOverflow;
@@ -62,13 +62,13 @@ class KAutoText extends StatefulWidget {
 }
 
 class KTextController {
-  AnimationController animationController;
-  Function onCompleted;
+  AnimationController? animationController;
+  late Function onCompleted;
 
   ///start AutoText
   start() {
     if (animationController != null) {
-      animationController.forward();
+      animationController!.forward();
     }
   }
 
@@ -80,8 +80,8 @@ class KTextController {
 
 class _KAutoTextState extends State<KAutoText>
     with SingleTickerProviderStateMixin {
-  AnimationController _animationController;
-  Animation animation;
+  AnimationController? _animationController;
+  late Animation animation;
   String str = "";
 
   @override
@@ -103,7 +103,7 @@ class _KAutoTextState extends State<KAutoText>
             }
           });
     animation = Tween(begin: 0.0, end: (widget.title).length.toDouble())
-        .animate(_animationController);
+        .animate(_animationController!);
     widget.kTextController.animationController = _animationController;
     super.initState();
   }
@@ -111,7 +111,7 @@ class _KAutoTextState extends State<KAutoText>
   @override
   void dispose() {
     // TODO: implement dispose
-    _animationController.dispose();
+    _animationController!.dispose();
     super.dispose();
   }
 
@@ -126,8 +126,8 @@ class _KAutoTextState extends State<KAutoText>
         ),
         overflow: widget.textOverflow,
         maxLines: widget.maxline,
-        maxFontSize: widget.maxsize == 0 ? widget.size : widget.maxsize,
-        minFontSize: widget.minsize == 0 ? widget.size : widget.minsize,
+        maxFontSize: widget.maxsize == 0 ? widget.size : widget.maxsize??0,
+        minFontSize: widget.minsize == 0 ? widget.size : widget.minsize??0,
         presetFontSizes: widget.fontlist ?? [widget.size]);
   }
 }

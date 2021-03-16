@@ -13,23 +13,23 @@ class KImage extends StatelessWidget {
       this.errorWidget,
       this.placeholderW = 40.0,
       this.placeholderH = 40.0,
-      Key key})
+      Key? key})
       : super(key: key);
 
   ///image url
   final String imageUrl;
 
   ///image BoxFit same as Image
-  final BoxFit boxFit;
+  final BoxFit? boxFit;
 
   ///image width
-  final double width;
+  final double? width;
 
   ///image height
-  final double height;
+  final double? height;
 
   ///image loading pic for asset
-  final String placeholder;
+  final String? placeholder;
 
   ///image loading width
   final double placeholderW;
@@ -38,7 +38,7 @@ class KImage extends StatelessWidget {
   final double placeholderH;
 
   ///image error pic for asset
-  final String errorWidget;
+  final String? errorWidget;
 
   @override
   Widget build(BuildContext context) {
