@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kira/kira_circle_container.dart';
 import 'package:flutter_kira/kira_container.dart';
-import 'package:flutter_kira/kira_cover_widget.dart';
 import 'package:flutter_kira/kira_dialog.dart';
 import 'package:flutter_kira/kira_text.dart';
 import 'package:flutter_kira/util/kira_screen.dart';
@@ -43,7 +42,7 @@ class _KCContainerPageState extends State<KCContainerPage> {
                       width: double.infinity,
                       onClick: () {
                         //                   pointController.openView();
-                        print('---kira🍎🍎---${index}');
+                        print('---kira🍎🍎---$index');
                       },
                       color: mColors.c_D8D8D8,
                     ),

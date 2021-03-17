@@ -15,9 +15,7 @@ class KToast {
     if (!canShow && oldMsg == msg || !msg.isNotEmpty) return;
     canShow = false;
     oldMsg = msg;
-    Fluttertoast.showToast(
-            msg: msg, gravity: ToastGravity.CENTER, timeInSecForIos: duration)
-        .then((e) {
+    Fluttertoast.showToast(msg: msg, gravity: ToastGravity.CENTER).then((e) {
       Future.delayed(Duration(seconds: duration), () {
         canShow = true;
       });

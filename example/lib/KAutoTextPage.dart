@@ -4,6 +4,7 @@ import 'package:flutter_kira/kira_container.dart';
 import 'package:flutter_kira/kira_text.dart';
 import 'package:flutter_kira/util/mColors.dart';
 
+// ignore: must_be_immutable
 class KAutoTextPage extends StatelessWidget {
   KTextController kTextController = KTextController()
     ..addCompleted(() {

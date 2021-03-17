@@ -3,13 +3,11 @@ import 'package:flutter_kira/kira_container.dart';
 import 'package:flutter_kira/kira_dialog.dart';
 import 'package:flutter_kira/kira_flow_button.dart';
 import 'package:flutter_kira/kira_text.dart';
-import 'package:flutter_kira/util/kira_screen.dart';
 import 'package:flutter_kira/util/mColors.dart';
 
 import 'KAutoTextPage.dart';
 import 'KCoverWidgetPage.dart';
 import 'KWidgetRunPage.dart';
-import 'Kdemo.dart';
 import 'kCContainerPage.dart';
 import 'r.dart';
 

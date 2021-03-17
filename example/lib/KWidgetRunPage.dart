@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kira/kira_container.dart';
-import 'package:flutter_kira/kira_image.dart';
 import 'package:flutter_kira/kira_text.dart';
 import 'package:flutter_kira/kira_widget_run.dart';
 import 'package:flutter_kira/util/mColors.dart';
