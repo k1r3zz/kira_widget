@@ -1,6 +1,6 @@
 name: flutter_kira
 description: A library that allows Flutter to develop quickly, encapsulating everyday animated widget, and is in the process of updating
-version: 0.2.0-nullsafety
+version: 0.3.0
 author: kira<a1215152135@gmail.com>
 homepage: https://github.com/k1r3zz/kira_widget
 
@@ -10,8 +10,10 @@ environment:
 
 dependencies:
   auto_size_text: ^3.0.0-nullsafety.0
-  cached_network_image: ^3.0.0-nullsafety
-  fluttertoast: ^8.0.1-nullsafety.0
+  cached_network_image: ^3.1.0
+  fluttertoast: ^8.0.8
+  flutter_spinkit: ^5.0.0
+  intl: ^0.17.0
 
   flutter:
     sdk: flutter

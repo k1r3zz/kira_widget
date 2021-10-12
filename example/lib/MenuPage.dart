@@ -1,15 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_kira/kira_container.dart';
-import 'package:flutter_kira/kira_dialog.dart';
-import 'package:flutter_kira/kira_flow_button.dart';
-import 'package:flutter_kira/kira_text.dart';
-import 'package:flutter_kira/util/kira_screen.dart';
-import 'package:flutter_kira/util/mColors.dart';
+import 'package:flutter_kira/kira_flutter.dart';
 
 import 'KAutoTextPage.dart';
 import 'KCoverWidgetPage.dart';
 import 'KWidgetRunPage.dart';
-import 'Kdemo.dart';
 import 'kCContainerPage.dart';
 import 'r.dart';
 
@@ -95,15 +89,18 @@ class _MenuPageState extends State<MenuPage> {
                       alignment: Alignment.center,
                       color: mColors.c_1BB1E6,
                       onClick: () {
-                        KDialog.showDialog(context, "我是一个KDialog", "确认", () {
-                          print('---kira🍎🍎---我是一个KDialog');
+                        KLoading.show(context,
+                            text: "加载中", loadingType: LoadingType.sword);
+                        Future.delayed(Duration(milliseconds: 2000), () {
+                          KLoading.dismiss(context);
                         });
                       },
                       child: KText(
-                        "KDialog",
+                        "个性dialog",
                         fontWeight: FontWeight.bold,
                         color: mColors.c_ffffff,
                         size: 25,
+                        isZH: true,
                       ),
                     ),
                     SizedBox(
